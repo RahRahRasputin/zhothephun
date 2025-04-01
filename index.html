@@ -11906,7 +11906,7 @@
         </script>
 
         <script> // This puts the header at the top
-          fetch("/header.html") // "/header.html" with a '/' because it's in the public_html folder
+          fetch("header.html") // "header.html" with NO '/' because it's in GitHub
               .then(response => {
                   if (!response.ok) {
                       throw new Error(`HTTP error! Status: ${response.status}`);
