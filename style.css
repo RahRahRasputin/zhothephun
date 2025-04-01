@@ -1,0 +1,257 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'EB Garamond', serif;
+    background: #1a1a1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(5px);
+    padding: 1rem 2rem;
+    z-index: 1000;
+    transition: padding 0.3s ease;
+}
+
+.header-content {
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #00ffcc;
+    text-shadow: 0px 0px 12px rgba(0, 255, 128, 0.8); /* New glow */
+    letter-spacing: 2px;
+}
+
+.subtext {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.subtext p {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    color: #b0b0b0;
+}
+
+.line1 {
+    font-size: 1.5rem;
+    color: #00cc99;
+    letter-spacing: 1px;
+}
+
+.line2 {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+}
+
+/* Scroll Behavior */
+body.scrolled header {
+    padding: 0.25rem 1rem;
+}
+
+body.scrolled .subtext {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    pointer-events: none;
+    display: none;
+}
+
+body.scrolled .header-content {
+    padding-bottom: 0;
+}
+
+/* Navigation Bar */
+.nav-bar {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-bar li {
+    position: relative;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-bar a:hover {
+    color: #00ffcc;
+    text-shadow: 0 0 8px rgba(0, 255, 204, 0.7);
+}
+
+/* Dropdown Styles */
+.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(20, 20, 20, 0.9);
+    min-width: 150px;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+    border-radius: 5px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li {
+    margin: 0;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+.dropdown-content a:hover {
+    background: rgba(0, 255, 204, 0.1);
+    color: #00ffcc;
+}
+
+/* Main Content */
+.content {
+    margin-top: 14rem;
+    padding: 2rem;
+    text-align: left;
+    margin-bottom: 80px; /* Added for breathing room */
+}
+
+
+ul {
+    margin-left: 20px !important;
+    padding-left: 20px !important;
+    list-style-position: outside !important; /* Ensures bullet points align properly */
+}
+li {
+    margin-bottom: 5px !important;
+}
+
+/* HEADER TITLE */
+.home-link {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Keeps the same color as the <h1> */
+}
+
+/* HEADER TITLE */
+.home-link:hover {
+    color: #FFD700; /* Optional hover effect */
+    transition: color 0.2s ease-in-out;
+}
+
+
+
+
+/* LINK COLOURS */
+a {
+    color: #00FFFF; /* Light Cyan */
+    text-decoration: none; /* Optional: Removes underline */
+}
+
+a:hover {
+    color: #FFD700; /* Gold when hovered */
+    text-decoration: underline; /* Optional: Adds underline on hover */
+}
+/*LINK COLOURS ABOVE*/
+
+img {
+    max-width: 100%;  /* Makes sure the image is responsive */
+    width: 300px;     /* Adjust width */
+    height: auto;     /* Keeps aspect ratio */
+}
+
+
+.product-image {
+    width: 200px !important; /* Adjust as needed */
+    height: auto !important; /* Maintains aspect ratio */
+  }
+  
+
+
+/*FONT SIZE*/
+body {
+    font-size: 18px; /* Increase the base font size */
+    line-height: 1.6; /* Improve readability */
+}
+
+p {
+    font-size: 18px; /* Adjust paragraph text */
+}
+
+h1 {
+    font-size: 36px; /* Slightly larger for main headings */
+}
+
+h2 {
+    font-size: 30px; /* Keep subheadings distinct */
+}
+
+h3 {
+    font-size: 24px; /* Maintain hierarchy */
+}
+/*FONT SIZE*/
+
+
+/* NON-CLICKABLE */
+.dropdown > a[href="#"],
+a[href="#"] {
+  cursor: default;
+  text-decoration: none; /* optional */
+  color: inherit;         /* optional */
+}
+/* NON-CLICKABLE */
+
+
+  
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .subtext p {
+        font-size: 1rem;
+    }
+
+    .nav-bar ul {
+        /*flex-direction: column; YEAH, NO. NOT WHAT WE WANT */
+        gap: 0.5rem; /* keep the gap small for horizontal spacing */
+    }
+
+    .dropdown .dropdown-content {
+        position: static;
+        transform: none;
+        width: 100%;
+    }
+}
